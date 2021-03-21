@@ -57,7 +57,7 @@
 		933D98FF25FA3B5F004B9177 /* GreySectionAndRightSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D98D325FA3B5F004B9177 /* GreySectionAndRightSection.swift */; };
 		937D948825FCD0E700FC79EA /* Eye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937D948725FCD0E700FC79EA /* Eye.swift */; };
 		937D949125FCD60000FC79EA /* ViewControl1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937D949025FCD60000FC79EA /* ViewControl1.swift */; };
-		93BE76672607A4E300D1FE7D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE76662607A4E300D1FE7D /* Session.swift */; };
+		93BE766B2607A5CB00D1FE7D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE766A2607A5CB00D1FE7D /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,7 +113,7 @@
 		933D98D325FA3B5F004B9177 /* GreySectionAndRightSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreySectionAndRightSection.swift; sourceTree = "<group>"; };
 		937D948725FCD0E700FC79EA /* Eye.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eye.swift; sourceTree = "<group>"; };
 		937D949025FCD60000FC79EA /* ViewControl1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControl1.swift; sourceTree = "<group>"; };
-		93BE76662607A4E300D1FE7D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		93BE766A2607A5CB00D1FE7D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,7 +207,7 @@
 			children = (
 				933D98B425FA3B5F004B9177 /* StorageContent.swift */,
 				933D98B525FA3B5F004B9177 /* Groups.swift */,
-				93BE76662607A4E300D1FE7D /* Session.swift */,
+				93BE766A2607A5CB00D1FE7D /* Session.swift */,
 				933D98B625FA3B5F004B9177 /* Friends.swift */,
 				933D98B725FA3B5F004B9177 /* News.swift */,
 				933D98B825FA3B5F004B9177 /* Content.swift */,
@@ -374,7 +374,7 @@
 				933D98E725FA3B5F004B9177 /* News.swift in Sources */,
 				933D98DC25FA3B5F004B9177 /* NaiveFullScreenPresenter.swift in Sources */,
 				933D98DE25FA3B5F004B9177 /* GroupsTableViewController.swift in Sources */,
-				93BE76672607A4E300D1FE7D /* Session.swift in Sources */,
+				93BE766B2607A5CB00D1FE7D /* Session.swift in Sources */,
 				933D98FD25FA3B5F004B9177 /* NewsTableViewCell.swift in Sources */,
 				933D988B25FA3ADE004B9177 /* SceneDelegate.swift in Sources */,
 				933D98FE25FA3B5F004B9177 /* FirstLettersSearch.swift in Sources */,
