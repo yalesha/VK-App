@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		930EB0152603A76100A993D5 /* CustomPopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930EB0122603A76100A993D5 /* CustomPopAnimator.swift */; };
 		930EB0162603A76100A993D5 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930EB0132603A76100A993D5 /* CustomInteractiveTransition.swift */; };
 		930EB0172603A76100A993D5 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930EB0142603A76100A993D5 /* CustomNavigationController.swift */; };
+		9312F511260D04120050A859 /* VKLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9312F510260D04120050A859 /* VKLoginController.swift */; };
 		933D988925FA3ADE004B9177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D988825FA3ADE004B9177 /* AppDelegate.swift */; };
 		933D988B25FA3ADE004B9177 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D988A25FA3ADE004B9177 /* SceneDelegate.swift */; };
 		933D988D25FA3ADE004B9177 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D988C25FA3ADE004B9177 /* ViewController.swift */; };
@@ -55,6 +56,8 @@
 		933D98FD25FA3B5F004B9177 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D98D025FA3B5F004B9177 /* NewsTableViewCell.swift */; };
 		933D98FE25FA3B5F004B9177 /* FirstLettersSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D98D225FA3B5F004B9177 /* FirstLettersSearch.swift */; };
 		933D98FF25FA3B5F004B9177 /* GreySectionAndRightSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D98D325FA3B5F004B9177 /* GreySectionAndRightSection.swift */; };
+		935A162A260F3B2900549673 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935A1629260F3B2900549673 /* NetworkService.swift */; };
+		935A162F260F3CAB00549673 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 935A162E260F3CAB00549673 /* Alamofire */; };
 		937D948825FCD0E700FC79EA /* Eye.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937D948725FCD0E700FC79EA /* Eye.swift */; };
 		937D949125FCD60000FC79EA /* ViewControl1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937D949025FCD60000FC79EA /* ViewControl1.swift */; };
 		93BE766B2607A5CB00D1FE7D /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BE766A2607A5CB00D1FE7D /* Session.swift */; };
@@ -64,6 +67,7 @@
 		930EB0122603A76100A993D5 /* CustomPopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopAnimator.swift; sourceTree = "<group>"; };
 		930EB0132603A76100A993D5 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
 		930EB0142603A76100A993D5 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		9312F510260D04120050A859 /* VKLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginController.swift; sourceTree = "<group>"; };
 		933D988525FA3ADE004B9177 /* VK_App_new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK_App_new.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		933D988825FA3ADE004B9177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		933D988A25FA3ADE004B9177 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		933D98D025FA3B5F004B9177 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		933D98D225FA3B5F004B9177 /* FirstLettersSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLettersSearch.swift; sourceTree = "<group>"; };
 		933D98D325FA3B5F004B9177 /* GreySectionAndRightSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreySectionAndRightSection.swift; sourceTree = "<group>"; };
+		935A1629260F3B2900549673 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		937D948725FCD0E700FC79EA /* Eye.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eye.swift; sourceTree = "<group>"; };
 		937D949025FCD60000FC79EA /* ViewControl1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControl1.swift; sourceTree = "<group>"; };
 		93BE766A2607A5CB00D1FE7D /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -121,17 +126,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				935A162F260F3CAB00549673 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9312F505260CFDDE0050A859 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				93BE766A2607A5CB00D1FE7D /* Session.swift */,
+				935A1629260F3B2900549673 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		933D987C25FA3ADE004B9177 = {
 			isa = PBXGroup;
 			children = (
-				933D988725FA3ADE004B9177 /* VK_App_new */,
 				933D988625FA3ADE004B9177 /* Products */,
+				933D988725FA3ADE004B9177 /* VK_App_new */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,10 +172,12 @@
 				933D98D125FA3B5F004B9177 /* Utils */,
 				933D98A725FA3B5E004B9177 /* ViewControllers */,
 				933D988C25FA3ADE004B9177 /* ViewController.swift */,
+				9312F505260CFDDE0050A859 /* Network */,
 				933D988E25FA3ADE004B9177 /* Main.storyboard */,
 				933D989425FA3AE0004B9177 /* Assets.xcassets */,
 				933D989625FA3AE0004B9177 /* LaunchScreen.storyboard */,
 				933D989925FA3AE0004B9177 /* Info.plist */,
+				935A1635260F41FD00549673 /* Test */,
 				933D989125FA3ADE004B9177 /* VK_App_new.xcdatamodeld */,
 			);
 			path = VK_App_new;
@@ -188,6 +205,7 @@
 				933D98AB25FA3B5E004B9177 /* FullScreenImagePresenter.swift */,
 				933D98AC25FA3B5E004B9177 /* GroupsTableViewController.swift */,
 				933D98AD25FA3B5E004B9177 /* NewsAdavncedTableViewController.swift */,
+				9312F510260D04120050A859 /* VKLoginController.swift */,
 				933D98AE25FA3B5E004B9177 /* FriendsCollectionViewController.swift */,
 				933D98AF25FA3B5E004B9177 /* LoginFormController.swift */,
 			);
@@ -207,7 +225,6 @@
 			children = (
 				933D98B425FA3B5F004B9177 /* StorageContent.swift */,
 				933D98B525FA3B5F004B9177 /* Groups.swift */,
-				93BE766A2607A5CB00D1FE7D /* Session.swift */,
 				933D98B625FA3B5F004B9177 /* Friends.swift */,
 				933D98B725FA3B5F004B9177 /* News.swift */,
 				933D98B825FA3B5F004B9177 /* Content.swift */,
@@ -266,6 +283,13 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		935A1635260F41FD00549673 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,6 +306,9 @@
 			dependencies = (
 			);
 			name = VK_App_new;
+			packageProductDependencies = (
+				935A162E260F3CAB00549673 /* Alamofire */,
+			);
 			productName = VK_App_new;
 			productReference = 933D988525FA3ADE004B9177 /* VK_App_new.app */;
 			productType = "com.apple.product-type.application";
@@ -301,7 +328,7 @@
 				};
 			};
 			buildConfigurationList = 933D988025FA3ADE004B9177 /* Build configuration list for PBXProject "VK_App_new" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -309,6 +336,9 @@
 				Base,
 			);
 			mainGroup = 933D987C25FA3ADE004B9177;
+			packageReferences = (
+				935A162D260F3CAB00549673 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 933D988625FA3ADE004B9177 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,9 +378,11 @@
 				933D98F025FA3B5F004B9177 /* CommentControl.swift in Sources */,
 				933D98E625FA3B5F004B9177 /* Friends.swift in Sources */,
 				933D989325FA3ADE004B9177 /* VK_App_new.xcdatamodeld in Sources */,
+				9312F511260D04120050A859 /* VKLoginController.swift in Sources */,
 				933D98E825FA3B5F004B9177 /* Content.swift in Sources */,
 				933D98D625FA3B5F004B9177 /* CustomPresentModalAnimator.swift in Sources */,
 				933D98E425FA3B5F004B9177 /* StorageContent.swift in Sources */,
+				935A162A260F3B2900549673 /* NetworkService.swift in Sources */,
 				933D98E025FA3B5F004B9177 /* FriendsCollectionViewController.swift in Sources */,
 				933D98F125FA3B5F004B9177 /* LikeControl.swift in Sources */,
 				933D98DA25FA3B5F004B9177 /* FriendsTableViewController.swift in Sources */,
@@ -533,6 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DGUQ26N3;
 				INFOPLIST_FILE = VK_App_new/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -552,6 +585,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DGUQ26N3;
 				INFOPLIST_FILE = VK_App_new/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -585,6 +619,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		935A162D260F3CAB00549673 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		935A162E260F3CAB00549673 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 935A162D260F3CAB00549673 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		933D989125FA3ADE004B9177 /* VK_App_new.xcdatamodeld */ = {
