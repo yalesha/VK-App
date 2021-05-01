@@ -6,9 +6,33 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct User: Codable {
+class User {
     let id: Int
-    let name: String
-    let status: String
+    private let photoUrlString: String
+    let firstName: String
+    let lastName: String
+    
+    var photoUrl: URL? { URL(string: photoUrlString)}
+    
+    init(json: SwiftyJSON.JSON) {
+        self.id = json["id"].intValue
+        self.photoUrlString = json["photo_100"].stringValue
+        self.firstName = json["first_name"].stringValue
+        self.lastName = json["last_name"].stringValue
+    }
+}
+
+struct UserSection: Comparable {
+    let title: Character
+    let friends: [User]
+    
+    static func < (lhs: UserSection, rhs: UserSection) -> Bool {
+        lhs.title < rhs.title
+    }
+    
+    static func == (lhs: UserSection, rhs: UserSection) -> Bool {
+        lhs.title == rhs.title
+    }
 }

@@ -9,9 +9,11 @@ import UIKit
 
 class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
   
-  var groupsArray: [Groups] = []
-  var filteredGroupsArray: [Groups] = []
+  var groupsArray = [Group]()
+  var filteredGroupsArray: [Group] = []
   var searchActive = false
+    
+    private let networkSession = NetworkService(token: Session.shared.token)
   
     
     @IBAction func logOutGroups(_ sender: Any) {
@@ -20,37 +22,81 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
   @IBOutlet weak var groupsSearchBar: UISearchBar!
   
 
+    var sectionedGroups: [GroupSection] {
+        groupsArray.reduce(into: []) {
+            currentSectionGroup, group in
+            guard let firstLetter = group.name.first else { return }
+            
+            if let currentSectionGroupFirstLetterIndex = currentSectionGroup.firstIndex(where: { $0.title == firstLetter }) {
+                
+                let oldSection = currentSectionGroup[currentSectionGroupFirstLetterIndex]
+                let updatedSection = GroupSection(title: firstLetter, groups: oldSection.groups + [group])
+                currentSectionGroup[currentSectionGroupFirstLetterIndex] = updatedSection
+                
+            } else {
+                let newSection = GroupSection(title: firstLetter, groups: [group])
+                currentSectionGroup.append(newSection)
+            }
+        }.sorted()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUserGroups()
-        filteredGroupsArray = groupsArray
-        groupsTableView.keyboardDismissMode = .onDrag
+        tableView.register(GroupHeader.self, forHeaderFooterViewReuseIdentifier: GroupHeader.reuseIdentifier)
+//        getUserGroups()
+//        filteredGroupsArray = groupsArray
+//        groupsTableView.keyboardDismissMode = .onDrag
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        networkSession.loadGroups(completionHandler: { [weak self] result in
+            switch result {
+            case let .failure(error):
+                print(error)
+            case let .success(groups):
+                self?.groupsArray = groups
+                self?.tableView.reloadData()
+            }
+        })
+//        NetworkService.loadGroupSearch(token: String)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sectionedGroups.count
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: GroupHeader.reuseIdentifier) as? GroupHeader else { return nil }
+        
+        let firstLetter = String(sectionedGroups[section].title)
+        header.headerTitle.text = firstLetter
+        
+        return header
+    }
+    
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredGroupsArray.count
+        return sectionedGroups[section].groups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let avatarName = filteredGroupsArray[indexPath.row].avatarPath
-      let avatarImage = UIImage(named: avatarName)
-      let groupsName = filteredGroupsArray[indexPath.row].name
+//      let avatarName = filteredGroupsArray[indexPath.row].avatarPath
+//      let avatarImage = UIImage(named: avatarName)
+//      let groupsName = filteredGroupsArray[indexPath.row].name
       let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupsListCell
-      cell.groupsAvatar.image = avatarImage
-      cell.groupsName.text = groupsName
-      return cell
+//      cell.groupsAvatar.image = avatarImage
+//      cell.groupsName.text = groupsName
+//
+        cell.configureGroup(with: sectionedGroups[indexPath.section].groups[indexPath.row])
+        tableView.separatorStyle = .singleLine
+        return cell
     }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
           groupsArray.remove(at: indexPath.row)
-          updateUserGroupsOnServer()
+//          updateUserGroupsOnServer()
           //syncronize filteredGroupsArray with the server
-          updateFilteredUserGroups()
+//          updateFilteredUserGroups()
           tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -88,13 +134,13 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
   //MARK: Prepare tableView datasource
   func getUserGroups() {
     if let userId = StorageContent.getUserId() {
-      groupsArray = Content.getUserGroups(userId: userId) ?? []
+//      groupsArray = Content.getUserGroups(userId: userId) ?? []
     }
   }
   
   func updateUserGroupsOnServer() {
     if let userId = StorageContent.getUserId() {
-      Content.updateUserGroups(userId: userId, updatedGroupsArray: groupsArray)
+//      Content.updateUserGroups(userId: userId, updatedGroupsArray: groupsArray)
     }
   }
   
@@ -105,17 +151,14 @@ class GroupsTableViewController: UITableViewController, UISearchBarDelegate {
   
   //MARK: Navigation
   @IBAction func addGroup(segue: UIStoryboardSegue) {
-    if segue.identifier == "addGroup" {
-      let allGroupsTableViewController = segue.source as! AllGroupsTableViewController
-      if  let groupToAddIndexPath = allGroupsTableViewController.availableGroupsTableView.indexPathForSelectedRow {
-        let groupToAdd = allGroupsTableViewController.filteredAvailableGroupsArray[groupToAddIndexPath.row]
-        if !groupsArray.contains(groupToAdd) {
-          groupsArray.append(groupToAdd)
-          updateUserGroupsOnServer()
-          updateFilteredUserGroups()
-          groupsTableView.reloadData()
-        }
-      }
-    }
-  }
+      if let allGroupsTableViewController = segue.source as? AllGroupsTableViewController,
+        let selectedIndexPath = allGroupsTableViewController.tableView.indexPathForSelectedRow {
+         let selectedGroup = allGroupsTableViewController.groups[selectedIndexPath.row]
+
+         if !groupsArray.contains(selectedGroup) {
+            groupsArray.append(selectedGroup)
+             tableView.reloadData()
+         }
+     }
+ }
 }

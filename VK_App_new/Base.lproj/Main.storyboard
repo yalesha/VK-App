@@ -221,20 +221,12 @@
                             <outlet property="delegate" destination="BZL-Vr-Hpb" id="J5J-Wv-09m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Friends" id="eZv-ZI-GQB">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="pJ0-w1-nFM">
-                            <connections>
-                                <action selector="logOutGroups:" destination="WbL-a6-ij5" id="dg0-Sb-Yu4"/>
-                                <segue destination="SjY-j9-KAr" kind="unwind" unwindAction="logOutWithUnwindSegue:" id="fEu-h3-cmN"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="My Friends" id="eZv-ZI-GQB"/>
                     <connections>
                         <outlet property="friendsSearchBar" destination="ubs-du-6i0" id="del-qw-HQd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpc-e3-Wfa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="SjY-j9-KAr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3882.4000000000001" y="-417.8410794602699"/>
         </scene>
@@ -309,7 +301,7 @@
                 </swipeGestureRecognizer>
                 <exit id="jXM-Pt-ivq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4975.1999999999998" y="-417.8410794602699"/>
+            <point key="canvasLocation" x="4806" y="-418"/>
         </scene>
         <!--FullScreenImagePresenter-->
         <scene sceneID="EpS-NP-urR">
@@ -336,7 +328,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="506"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picStarWars01" translatesAutoresizingMaskIntoConstraints="NO" id="bmQ-Jj-4Ol">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bmQ-Jj-4Ol">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="506"/>
                                                 </imageView>
                                             </subviews>
@@ -369,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFv-Bq-Kcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6212" y="-734"/>
+            <point key="canvasLocation" x="5746" y="-418"/>
         </scene>
         <!--Naive Full Screen Presenter-->
         <scene sceneID="lsC-1i-eaL">
@@ -398,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOz-30-uio" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6212" y="43.628185907046479"/>
+            <point key="canvasLocation" x="6752" y="-418"/>
         </scene>
         <!--My Groups-->
         <scene sceneID="aJP-ZM-tyM">
@@ -488,12 +480,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Groups" id="OWo-O7-1XQ">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="uO6-zi-jo5">
-                            <connections>
-                                <action selector="logOutGroups:" destination="WbL-a6-ij5" id="u0h-cN-csK"/>
-                                <segue destination="3ec-jd-rMF" kind="unwind" unwindAction="logOutWithUnwindSegue:" id="Om4-rU-v6s"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="81S-cX-g1V">
                             <connections>
                                 <segue destination="WS4-9P-kBG" kind="show" id="1ia-jw-U6i"/>
@@ -506,9 +492,8 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrZ-TN-QQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="3ec-jd-rMF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3882.4000000000001" y="770.46476761619192"/>
+            <point key="canvasLocation" x="3881" y="360"/>
         </scene>
         <!--News-->
         <scene sceneID="oQ4-gh-ulr">
@@ -523,18 +508,78 @@
                             <outlet property="delegate" destination="tMg-en-icF" id="COz-9v-yXq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="News" id="8tM-5r-pX2">
-                        <barButtonItem key="leftBarButtonItem" title="Log Out" id="xER-5o-NUK">
-                            <connections>
-                                <segue destination="jtA-en-mJ4" kind="unwind" unwindAction="logOutWithUnwindSegue:" id="lDy-73-0av"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="News" id="8tM-5r-pX2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u11-2b-paE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="jtA-en-mJ4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3882" y="1676"/>
+            <point key="canvasLocation" x="3881" y="1170"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="6EE-PY-Khg">
+            <objects>
+                <tableViewController id="zXb-Hx-jce" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tMZ-7H-5cw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="jSJ-sV-u04">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vFR-Pz-uKQ">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFR-Pz-uKQ" id="7Ec-vF-KPY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8g-Dl-3jd">
+                                                    <rect key="frame" x="16" y="7" width="55" height="30"/>
+                                                    <state key="normal" title="Log Out"/>
+                                                    <connections>
+                                                        <action selector="logOut:" destination="mmC-nc-jUc" eventType="touchUpInside" id="DTi-85-BN7"/>
+                                                        <action selector="logOutButton:" destination="mmC-nc-jUc" eventType="touchUpInside" id="Hjd-5i-TaS"/>
+                                                        <segue destination="mmC-nc-jUc" kind="unwind" unwindAction="unwindAndClearCookiesWithSegue:" id="DB9-se-Oe1"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="e8g-Dl-3jd" firstAttribute="centerY" secondItem="7Ec-vF-KPY" secondAttribute="centerY" id="C0b-yI-Nb2"/>
+                                                <constraint firstItem="e8g-Dl-3jd" firstAttribute="leading" secondItem="7Ec-vF-KPY" secondAttribute="leadingMargin" constant="-4" id="Sxg-FG-PAp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="zXb-Hx-jce" id="keq-2U-4Qg"/>
+                            <outlet property="delegate" destination="zXb-Hx-jce" id="lb3-Rn-GwF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="XVN-yD-ohp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tER-FT-tgo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="mmC-nc-jUc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3880" y="1911"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="OUm-nT-Gc2">
+            <objects>
+                <navigationController id="yLc-HC-reT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="info.circle" catalog="system" id="0e0-ML-SBT"/>
+                    <navigationItem key="navigationItem" id="YQh-Xq-Wqn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gS0-oP-eMK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zXb-Hx-jce" kind="relationship" relationship="rootViewController" id="fEL-39-V1F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBJ-2b-AqD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942" y="1911"/>
         </scene>
         <!--Новости-->
         <scene sceneID="9TU-RC-0hZ">
@@ -551,7 +596,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnv-in-aX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2943" y="1677"/>
+            <point key="canvasLocation" x="2942" y="1170"/>
         </scene>
         <!--All Groups Table View Controller-->
         <scene sceneID="fVg-cc-hek">
@@ -651,7 +696,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rc4-tv-zAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9gm-qm-eS9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4975.1999999999998" y="769.56521739130437"/>
+            <point key="canvasLocation" x="4807" y="360"/>
         </scene>
         <!--Мои друзья-->
         <scene sceneID="FVh-c4-yEn">
@@ -692,7 +737,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEw-ek-fCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2943.1999999999998" y="770.46476761619192"/>
+            <point key="canvasLocation" x="2942" y="360"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="U42-Qw-sZs">
@@ -749,6 +794,7 @@
                         <segue destination="7Wd-OB-SPh" kind="relationship" relationship="viewControllers" id="PW6-X9-WqD"/>
                         <segue destination="Lh7-4H-AJv" kind="relationship" relationship="viewControllers" id="aN7-aq-bu3"/>
                         <segue destination="I0p-Q6-r4Q" kind="relationship" relationship="viewControllers" id="yNg-bW-plx"/>
+                        <segue destination="yLc-HC-reT" kind="relationship" relationship="viewControllers" id="u58-sE-37Q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4lc-oC-jVu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -758,10 +804,10 @@
     </scenes>
     <resources>
         <image name="Group 1" width="105" height="105"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="mustache.fill" catalog="system" width="128" height="49"/>
         <image name="newspaper-7" width="30" height="30"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="picStarWars01" width="492" height="417"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

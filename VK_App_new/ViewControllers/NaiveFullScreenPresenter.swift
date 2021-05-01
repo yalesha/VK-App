@@ -11,7 +11,7 @@ class NaiveFullScreenPresenter: UIViewController {
   
   @IBOutlet weak var fullScreenImageView: UIImageView!
     
-  var friendToDisplay: Friends?
+  var friendToDisplay: User?
   var imagesToDisplay: [String] = []
   var index: Int = 0
   var currentImageIndex: Int = 0

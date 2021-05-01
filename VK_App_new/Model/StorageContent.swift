@@ -22,7 +22,7 @@ class StorageContent {
     return UserDefaults.standard.string(forKey: userIdKey)
   }
  
-  static func getFriendsArray() -> [Friends]? {
-    return UserDefaults.standard.object(forKey: friendsArrayKey) as? [Friends]
+  static func getFriendsArray() -> [User]? {
+    return UserDefaults.standard.object(forKey: friendsArrayKey) as? [User]
   }
 }

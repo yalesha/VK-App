@@ -11,7 +11,7 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
   
   @IBOutlet weak var fullScreenCollectionView: UICollectionView!
   private let reuseIdentifier = "fullScreenCollectionViewCellIdentifier"
-  var friendToDisplay: Friends?
+  var friendToDisplay: User?
   var imagesToDisplay: [String] = []
   var indexPathToScrollTo = IndexPath(row:0, section:0)
   var newCellIndexPath = IndexPath(row: 0, section: 0)
@@ -27,7 +27,7 @@ class FullScreenImagePresenter: UIViewController, UICollectionViewDelegate, UICo
     setupCollectionViewAppearance()
     
     if let friend = friendToDisplay {
-      imagesToDisplay = Content.getUserImages(userName: friend.name)
+      imagesToDisplay = Content.getUserImages(userName: friend.lastName)
       fullScreenCollectionView.scrollToItem(at: indexPathToScrollTo, at: UICollectionView.ScrollPosition.centeredHorizontally, animated: true)
       
       let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(swipedToDismiss))
