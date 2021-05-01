@@ -3,4 +3,70 @@
    uuid = "1BE7052B-428F-444A-A0A0-C75D108DC029"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "651E6E15-5911-483D-BBD1-2FB69A3A1B84"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_App_new/Network/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "loadFriends(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AED2D2DC-EFD3-4D1F-92F8-3509A4212C68"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VK_App_new/Network/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "loadFriends(completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AED2D2DC-EFD3-4D1F-92F8-3509A4212C68 - fa7e230ef0fa7a6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static VK_App_new.NetworkService.loadFriends(token: Swift.String) -&gt; ()"
+                  moduleName = "VK_App_new"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejakuba/Documents/GitHub/VK_App_new/VK_App_new/Network/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  uuid = "AED2D2DC-EFD3-4D1F-92F8-3509A4212C68 - ae92b231ee66d7fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 (Any) -&gt; SwiftyJSON.JSON in closure #1 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in static VK_App_new.NetworkService.loadFriends(token: Swift.String) -&gt; ()"
+                  moduleName = "VK_App_new"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksejakuba/Documents/GitHub/VK_App_new/VK_App_new/Network/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -7,11 +7,11 @@
 
 import Foundation
 
-class PhotoResponse: Codable {
-    let response: Photos
-}
-
-class Photos: Codable {
-    let count: Int
-    let items: [Photo]
-}
+//class PhotoResponse: Codable {
+//    let response: Photos
+//}
+//
+//class Photos: Codable {
+//    let count: Int
+//    let items: [Photo]
+//}

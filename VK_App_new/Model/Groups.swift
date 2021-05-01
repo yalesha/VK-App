@@ -7,12 +7,39 @@
 
 import Foundation
 
-struct Groups: Equatable {
+struct GroupResponse: Codable {
+    let response: GroupContainer
+}
+
+struct GroupContainer: Codable {
+    let items: [Group]
+}
+
+
+
+
+struct Group: Codable, Equatable {
   let name: String
-  let avatarPath: String
-  
-  init (name: String, avatarPath: String) {
-    self.name = name
-    self.avatarPath = avatarPath
-  }
+    let groupId: Int
+    private let pictureUrlString: String
+    var pictureUrl: URL? { URL(string: pictureUrlString)}
+    
+    enum CodingKeys: String, CodingKey {
+        case groupId = "id"
+        case name
+        case pictureUrlString = "photo_200"
+    }
+    
+}
+struct GroupSection: Comparable {
+    let title: Character
+    let groups: [Group]
+    
+    static func < (lhs: GroupSection, rhs: GroupSection) -> Bool {
+        lhs.title < rhs.title
+    }
+    
+    static func == (lhs: GroupSection, rhs: GroupSection) -> Bool {
+        lhs.title == rhs.title
+    }
 }

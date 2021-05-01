@@ -7,10 +7,12 @@
 
 import UIKit
 
-class AllGroupsTableViewController: UITableViewController, UISearchBarDelegate {
+class AllGroupsTableViewController: UITableViewController {
   
-  var availableGroupsArray: [Groups] = []
-  var filteredAvailableGroupsArray: [Groups] = []
+  var availableGroupsArray = [Group]()
+//  var filteredAvailableGroupsArray = [Group]()
+    var groups = [Group]()
+    private let networkSession = NetworkService(token: Session.shared.token)
   
   @IBOutlet var availableGroupsTableView: UITableView!
   @IBOutlet weak var allGroupsSearchBar: UISearchBar!
@@ -18,10 +20,11 @@ class AllGroupsTableViewController: UITableViewController, UISearchBarDelegate {
   
   override func viewDidLoad() {
         super.viewDidLoad()
-        getAvailableGroups()
-        filteredAvailableGroupsArray = availableGroupsArray
-        availableGroupsTableView.keyboardDismissMode = .onDrag
+//        getAvailableGroups()
+//        filteredAvailableGroupsArray = availableGroupsArray
+//        availableGroupsTableView.keyboardDismissMode = .onDrag
     }
+    
 
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,16 +32,19 @@ class AllGroupsTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredAvailableGroupsArray.count
+        return groups.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let avatarName = filteredAvailableGroupsArray[indexPath.row].avatarPath
-      let avatarImage = UIImage(named: avatarName)
-      let groupsName = filteredAvailableGroupsArray[indexPath.row].name
-      let cell = tableView.dequeueReusableCell(withIdentifier: "availableGroupsCell", for: indexPath) as! GroupsListCell
-      cell.groupsAvatar.image = avatarImage
-      cell.groupsName.text = groupsName
+//      let avatarName = filteredAvailableGroupsArray[indexPath.row].avatarPath
+//      let avatarImage = UIImage(named: avatarName)
+//      let groupsName = filteredAvailableGroupsArray[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "availableGroupsCell", for: indexPath) as! GroupsListCell
+        
+        cell.configureGroup(with: groups[indexPath.row])
+        tableView.separatorStyle = .singleLine
+//      cell.groupsAvatar.image = avatarImage
+//      cell.groupsName.text = groupsName
       return cell
     }
   
@@ -47,31 +53,32 @@ class AllGroupsTableViewController: UITableViewController, UISearchBarDelegate {
     hideKeyboard()
   }
   
-  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-    //keep only names matching searchBar input
-    filteredAvailableGroupsArray = availableGroupsArray.filter({ (group) -> Bool in
-      FirstLetterSearch.isMatched(searchBase: group.name, searchString: searchText)
-    })
-    
-    if (searchText.count == 0) {
-      //restore initial state of data received from server
-      restoreAvailableGroups()
-      hideKeyboard()
-    }
-    availableGroupsTableView.reloadData()
-  }
+  
   
   @objc func hideKeyboard() {
     allGroupsSearchBar.endEditing(true)
   }
 
 
-  func getAvailableGroups() {
-    availableGroupsArray = Content.getAvailableGroups() ?? []
-  }
-  
-  func restoreAvailableGroups(){
-    getAvailableGroups()
-    filteredAvailableGroupsArray = availableGroupsArray
-  }
+//  func getAvailableGroups() {
+////    availableGroupsArray = Content.getAvailableGroups() ?? []
+//  }
+//
+//  func restoreAvailableGroups(){
+//    getAvailableGroups()
+//    filteredAvailableGroupsArray = availableGroupsArray
+//  }
+}
+extension AllGroupsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        networkSession.loadGroupSearch(group: searchText, completionHandler: {[ weak self ] result in
+            switch result {
+            case let .failure(error):
+                print(error)
+            case let .success(groups):
+                self?.groups = groups
+                self?.tableView.reloadData()
+            }
+        })
+    }
 }

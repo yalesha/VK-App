@@ -9,11 +9,11 @@ import Foundation
 
 class GreySectionAndRightSection {
   
-  static func greyWordSectionInList(array: [Friends]) -> [Character] {
+  static func greyWordSectionInList(array: [User]) -> [Character] {
     var indexArray: [Character] = []
     var indexSet = Set<Character>()
     for item in array {
-      let firstLetter = item.name[0]
+      let firstLetter = item.lastName[0]
       indexSet.insert(firstLetter)
     }
     for char in indexSet{
@@ -25,11 +25,11 @@ class GreySectionAndRightSection {
   
     //MARK: Right word bar search
     
-  static func rightWordSearchBar(array: [Friends]) -> [Character: [Friends]] {
-    var friendIndexDictionary: [Character: [Friends]] = [:]
+  static func rightWordSearchBar(array: [User]) -> [Character: [User]] {
+    var friendIndexDictionary: [Character: [User]] = [:]
     
     for item in array {
-      let firstLetter = item.name[0]
+      let firstLetter = item.lastName[0]
      if (friendIndexDictionary.keys.contains(firstLetter)) {
          friendIndexDictionary[firstLetter]?.append(item)
      } else {

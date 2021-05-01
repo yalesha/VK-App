@@ -7,11 +7,20 @@
 
 import Foundation
 
-struct GroupResponse: Codable {
-    let response: Groups
-}
-
-struct Group: Codable {
-    let count: Int
-    let items: [Group]
-}
+//struct GroupResponse: Codable {
+//    let response: Group
+//}
+//
+//struct Group: Codable, Equatable {
+//    let groupId: Int
+//    let name: String
+//    private let picrureUrlString: String
+//    
+//    var pictureUrl: URL? { URL(string: picrureUrlString)}
+//    
+//    enum CodingKey: CodingKey {
+//        case groupId =
+//        case name
+//        case pictureUrlString = "photo_200"
+//    }
+//}
